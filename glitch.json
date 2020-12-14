@@ -1,0 +1,1 @@
+{"install": "python3 make.py; python3 dev/init.py","start": "php -S localhost:8000","watch": {"ignore": ["logs"]}}
