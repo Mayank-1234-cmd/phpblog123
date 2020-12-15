@@ -29,7 +29,7 @@ for i in os.listdir(r'blogMD/'):
   }
   span {
     display:inline;
-  }</style>
+  }</style><style src="/dev/css"></style> <script src="/dev/js"></script>
   <h3><i>a site<span class="p">hello world <a href="update.php">update</a></span></h3></i>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
   <?php
@@ -103,7 +103,7 @@ Let me know if you want features!
 
 
 
-
+<style src="/dev/css"></style> <script src="/dev/js"></script>
 
 <p>Coded by <a href='//glitch.com/@notmayank'>mayank</a>, content by me!</a></p>
 <style src="dev/script.js"></script><style src="dev/style.css"></style>
@@ -140,7 +140,7 @@ f.close()
 blogposts=Reverse(blogposts)
 for i in blogposts:
   with open("index.php", "a") as myfile:
-    myfile.write("<a href='/blogposts/"+i.replace(".md",".php")+"'>"+i.replace(".md","")+"</a><br/>")
+    myfile.write("<a href='/blogposts/"+i+"'>"+i.replace(".md","")+"</a><br/>")
 
 with open("index.php","a") as f:
   f.write("""<hr/><p>
