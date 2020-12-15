@@ -140,7 +140,7 @@ f.close()
 blogposts=Reverse(blogposts)
 for i in blogposts:
   with open("index.php", "a") as myfile:
-    myfile.write("<a href='/blogposts/"+i+"'>"+i.replace(".md","")+"</a><br/>")
+    myfile.write("<a href='/blogposts/"+i.replace(".md",".php")+"'>"+i.replace(".md","")+"</a><br/>")
 
 with open("index.php","a") as f:
   f.write("""<hr/><p>
