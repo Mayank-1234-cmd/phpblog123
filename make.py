@@ -11,31 +11,33 @@ for i in os.listdir(r'blogMD/'):
   MDcont=t.read()
   t.close()
   tWrite="""
-  <style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-  * {
-    font-weight:100px;
-    font-family: 'Roboto', sans-serif;
-  }
-  img {
-    width:100%;
-  }
-  hr {
-    width:100%;
-  }
-  .p {
-    font-size:10px;
-    display: inline-block;
-    display: inline;
-  }
-  span {
-    display:inline;
-  }</style><style src="/dev/css"></style> <script src="/dev/js"></script>
-  <h3><i>a site<span class="p">hello world <a href="update.php">update</a></span></h3></i>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-  <?php
-  require '../dev/pd.php';
-  $Parsedown = new Parsedown();
-  echo $Parsedown->text('"""+MDcont+"""'); 
+<style>@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+* {
+  font-weight:100px;
+  font-family: 'Roboto', sans-serif;
+}
+img {
+  width:100%;
+}
+hr {
+  width:100%;
+}
+.p {
+  font-size:10px;
+  display: inline-block;
+  display: inline;
+}
+span {
+  display:inline;
+}</style><style src="/dev/style.css"></style> <script src="/dev/script.js"></script>
+<h3><i>a site<span class="p">hello world <a href="update.php">update</a></span></h3></i>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+<?php
+require '../dev/pd.php';
+$Parsedown = new Parsedown();
+echo $Parsedown->text('"""
++MDcont+
+"""'); 
   """
   i=i.replace(".md","")
   f = open("blogposts/" + i + ".php", "w")
@@ -140,7 +142,7 @@ f.close()
 blogposts=Reverse(blogposts)
 for i in blogposts:
   with open("index.php", "a") as myfile:
-    myfile.write("<a href='/blogposts/"+i+"'>"+i.replace(".md","")+"</a><br/>")
+    myfile.write("<a href='/blogposts/"+i.replace(".md",".php")+"'>"+i.replace(".md","")+"</a><br/>")
 
 with open("index.php","a") as f:
   f.write("""<hr/><p>
